@@ -9,6 +9,8 @@ import Register from './Components/Register';
 import AddProduct from './Components/AddProduct';
 import UpdateProduct from './Components/UpdateProduct';
 import MyProduct from './Components/MyProduct';
+import MyContext from './Components/MyContex';
+import Private from './Components/Private';
 
 
 const router = createBrowserRouter([
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/addProduct",
-        element:<AddProduct></AddProduct>
+        element:<Private><AddProduct></AddProduct></Private>
       },
       {
         path:"updateProduct",
@@ -47,6 +49,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <MyContext>
     <RouterProvider router={router} />
+    </MyContext>
   </React.StrictMode>,
 )
