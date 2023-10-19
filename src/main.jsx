@@ -11,6 +11,8 @@ import UpdateProduct from './Components/UpdateProduct';
 import MyProduct from './Components/MyProduct';
 import MyContext from './Components/MyContex';
 import Private from './Components/Private';
+import Details from './Components/Details';
+import ProductPage from './Components/ProductPage';
 
 
 const router = createBrowserRouter([
@@ -36,11 +38,20 @@ const router = createBrowserRouter([
       },
       {
         path:"updateProduct",
-        element:<UpdateProduct></UpdateProduct>
+        element:<Private><UpdateProduct></UpdateProduct></Private>
       },
       {
         path:"/myProduct",
-        element:<MyProduct></MyProduct>
+        element:<Private><MyProduct></MyProduct></Private>
+      },
+      {
+        path:"/details",
+        element:<Private><Details></Details></Private>
+      },
+      {
+        path:"/productPage/:brandName",
+        element:<ProductPage></ProductPage>,
+        loader:({params})=>fetch(`brandinfo.json/${params.brandName}`) //it need to update with real api
       }
     ]
   },

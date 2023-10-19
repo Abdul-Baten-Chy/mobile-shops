@@ -2,9 +2,10 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { MyContextProvider } from "./MyContex";
 import { updateProfile } from "firebase/auth";
-
+import { useLocation, useNavigate } from "react-router-dom";
 const Register = () => {
-
+    const location = useLocation();
+    const navigate = useNavigate()
     const [errMsg, setErrMsg]=useState('')
     const {handleRegister}= useContext(MyContextProvider)
     const handleFormSubmit=e=>{
@@ -24,6 +25,7 @@ const Register = () => {
     .then((res)=>{
     
       updateProfile(res.user,{displayName:name})
+      navigate(location?.state? location.state: '/')
       .then()
       .catch()
 
@@ -32,6 +34,7 @@ const Register = () => {
       console.log(err.message);
       setErrMsg(err.message)
     })
+    form.reset();
     
 }
 

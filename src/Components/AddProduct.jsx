@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { MyContextProvider } from "./MyContex";
+// import { useContext, useState } from "react";
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+// import { MyContextProvider } from "./MyContex";
 
 const AddProduct = () => {
 
@@ -19,12 +19,12 @@ const AddProduct = () => {
                             types:types,
                             other_info:{name, price, description, rating }
         }
-
+        form.reset();
         console.log(productsInfo);
        
 }
     return (
-        <div className="hero min-h-screen bg-base-200 mt-16 ">
+        <div className="hero min-h-screen  mt-16 ">
         <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={handleFormSubmit}>
             <div className="form-control">

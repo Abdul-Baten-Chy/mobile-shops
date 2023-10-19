@@ -6,11 +6,13 @@ function App() {
  
 
   return (
-    <div className="max-w-[1300px] mx-auto px-16">
+   <div>
+     <div className="max-w-[1300px] mx-auto px-16">
      <Nav></Nav>
      <Outlet></Outlet>
-     <Footer></Footer>
     </div>
+    <Footer></Footer>
+   </div>
   )
 }
 
