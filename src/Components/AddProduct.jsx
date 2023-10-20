@@ -3,6 +3,7 @@
 // import { MyContextProvider } from "./MyContex";
 
 const AddProduct = () => {
+ 
 
     const handleFormSubmit=e=>{
         e.preventDefault();
@@ -14,13 +15,21 @@ const AddProduct = () => {
         const description = form.description.value;
         const types = form.types.value;
         const rating = form.rating.value;
-        const productsInfo ={brandName: brandName, 
-                            image:image,
-                            types:types,
-                            other_info:{name, price, description, rating }
+        const productsInfo ={
+          brandName, image, types, name, price, description, rating                      
         }
+        fetch('http://localhost:5000/products', {
+          method:"POST",
+          headers:{
+            'content-type': 'application/json'
+          },
+          body:JSON.stringify(productsInfo)
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
         form.reset();
-        console.log(productsInfo);
+        // console.log(productsInfo);
+
        
 }
     return (
