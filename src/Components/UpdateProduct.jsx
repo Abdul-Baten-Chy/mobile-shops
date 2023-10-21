@@ -1,12 +1,10 @@
-// import { useContext, useState } from "react";
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { MyContextProvider } from "./MyContex";
 
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 
 const UpdateProduct = () => {
         const dataToUpdate= useLoaderData()
-        const {name, brandName, rating, price, image,_id}=dataToUpdate;
+        const {name, brandName, rating, price, image,_id, description}=dataToUpdate;
         console.log(dataToUpdate);
         const handleFormSubmit=e=>{
             e.preventDefault();
@@ -22,7 +20,7 @@ const UpdateProduct = () => {
             form.reset();
             console.log(updateProductsInfo);
 
-            fetch(`http://localhost:5000/products/${_id}`, {
+            fetch(`https://backend-qwywwjwvf-abdu-baten-chys-projects.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -30,7 +28,17 @@ const UpdateProduct = () => {
             body: JSON.stringify(updateProductsInfo)
         })
             .then(res => res.json())
-            .then(data=>console.log(data))
+            .then(data=>{
+              if (data.modifiedCount > 0) {
+                console.log(data)
+                swal.fire({
+                    title: 'Success!',
+                    text: 'Coffee Updated Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            }
+            })
            
     }
         return (
@@ -77,6 +85,12 @@ const UpdateProduct = () => {
                   />
                 </div>
                 <div className="form-control">
+              <label className="label">
+                <span className="label-text">Description</span>
+              </label>
+              <textarea className="textarea textarea-bordered" defaultValue={description} name="description" placeholder="description"></textarea>
+            </div>
+                <div className="form-control">
                   <label className="label">
                     <span className="label-text">Price</span>
                   </label>
@@ -112,7 +126,7 @@ const UpdateProduct = () => {
                   </select>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary" >Submit</button>
+                  <button className="btn btn-primary" >Update</button>
                 </div>
               </form>  
             </div>

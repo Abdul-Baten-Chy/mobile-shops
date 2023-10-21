@@ -41,21 +41,22 @@ const router = createBrowserRouter([
       {
         path:"/updateProduct/:id",
         element:<Private><UpdateProduct></UpdateProduct></Private>,
-        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+        loader:({params})=>fetch(`https://backend-qwywwjwvf-abdu-baten-chys-projects.vercel.app/products/${params.id}`)
       },
       {
         path:"/myProduct",
-        element:<Private><MyProduct></MyProduct></Private>
+        element:<Private><MyProduct></MyProduct></Private>,
+        loader:()=>fetch('https://backend-qwywwjwvf-abdu-baten-chys-projects.vercel.app/products')
       },
       {
         path:"/details/:id",
         element:<Private><Details></Details></Private>,
-        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+        loader:({params})=>fetch(`https://backend-qwywwjwvf-abdu-baten-chys-projects.vercel.app/products/${params.id}`)
       },
       {
         path:"/products/:brandName",
         element:<ProductPage></ProductPage>,
-        loader:({params})=>fetch(`http://localhost:5000/products/${params.brandName}`) //it need to update with real api
+        loader:({params})=>fetch(`https://backend-qwywwjwvf-abdu-baten-chys-projects.vercel.app/productsbyBrand/${params.brandName}`) //it need to update with real api
       }
     ]
   },
