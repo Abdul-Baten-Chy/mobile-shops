@@ -4,12 +4,11 @@ import Header from "./Header";
 import NewArrival from "./NewArrival";
 import About from "./About";
 
-
 const Home = () => {
-
+ 
     return (
-        <div className="dark:bg-black">
-            <Header></Header>
+           <div>
+             <Header></Header>
             <div className="flex gap-7 mt-14 justify-center">
             <NewArrival></NewArrival>
             </div>

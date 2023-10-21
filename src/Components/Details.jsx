@@ -5,7 +5,7 @@ import { useLoaderData} from "react-router-dom";
 const Details = () => {
 
 const productDta=useLoaderData();
-// console.log(productDta);
+console.log(productDta);
 const {name, brandName, description, image}=productDta;
 return (
     <div className="card  bg-base-100 shadow-xl image-full mt-24 text-white">
