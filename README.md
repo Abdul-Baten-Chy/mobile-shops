@@ -10,7 +10,7 @@ About Project:
 
 Live link: https://clientside-10.web.app/
 
-clientside git link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-Abdul-Baten-Chy
+client side git link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-Abdul-Baten-Chy
 
 server side git link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-Abdul-Baten-Chy
 
