@@ -2,8 +2,12 @@
 // import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { MyContextProvider } from "./MyContex";
 
-const UpdateProduct = () => {
+import { useLoaderData } from "react-router-dom";
 
+const UpdateProduct = () => {
+        const dataToUpdate= useLoaderData()
+        const {name, brandName, rating, price, image,_id}=dataToUpdate;
+        console.log(dataToUpdate);
         const handleFormSubmit=e=>{
             e.preventDefault();
             const form = e.target;
@@ -14,13 +18,19 @@ const UpdateProduct = () => {
             const description = form.description.value;
             const types = form.types.value;
             const rating = form.rating.value;
-            const productsInfo ={brandName: brandName, 
-                                image:image,
-                                types:types,
-                                other_info:{name, price, description, rating }
-            }
+            const updateProductsInfo ={name, brandName, types, rating, price, image, _id,  description}
             form.reset();
-            console.log(productsInfo);
+            console.log(updateProductsInfo);
+
+            fetch(`http://localhost:5000/products/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateProductsInfo)
+        })
+            .then(res => res.json())
+            .then(data=>console.log(data))
            
     }
         return (
@@ -35,6 +45,7 @@ const UpdateProduct = () => {
                     type="text"
                     name="name"
                     placeholder="name"
+                    defaultValue={name}
                     className="input input-bordered"
                     required
                   />
@@ -46,6 +57,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     name="brandName"
+                    defaultValue={brandName}
                     placeholder="Brand Name"
                     className="input input-bordered"
                     required
@@ -58,6 +70,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     name="image"
+                    defaultValue={image}
                     placeholder="Image url"
                     className="input input-bordered"
                     required
@@ -70,6 +83,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     name="price"
+                    defaultValue={price}
                     placeholder="Price "
                     className="input input-bordered"
                     required
@@ -82,6 +96,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     name="rating"
+                    defaultValue={rating}
                     placeholder="Price "
                     className="input input-bordered"
                     required

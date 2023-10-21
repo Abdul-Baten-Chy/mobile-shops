@@ -13,12 +13,14 @@ import MyContext from './Components/MyContex';
 import Private from './Components/Private';
 import Details from './Components/Details';
 import ProductPage from './Components/ProductPage';
+import Error from './Components/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:"/",
@@ -37,21 +39,23 @@ const router = createBrowserRouter([
         element:<Private><AddProduct></AddProduct></Private>
       },
       {
-        path:"updateProduct",
-        element:<Private><UpdateProduct></UpdateProduct></Private>
+        path:"/updateProduct/:id",
+        element:<Private><UpdateProduct></UpdateProduct></Private>,
+        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
       },
       {
         path:"/myProduct",
         element:<Private><MyProduct></MyProduct></Private>
       },
       {
-        path:"/details",
-        element:<Private><Details></Details></Private>
+        path:"/details/:id",
+        element:<Private><Details></Details></Private>,
+        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
       },
       {
-        path:"/productPage/:brandName",
+        path:"/products/:brandName",
         element:<ProductPage></ProductPage>,
-        loader:({params})=>fetch(`brandinfo.json/${params.brandName}`) //it need to update with real api
+        loader:({params})=>fetch(`http://localhost:5000/products/${params.brandName}`) //it need to update with real api
       }
     ]
   },
@@ -63,5 +67,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <MyContext>
     <RouterProvider router={router} />
     </MyContext>
-  </React.StrictMode>,
+ </React.StrictMode>,
 )

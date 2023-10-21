@@ -8,7 +8,7 @@ const Header = () => {
           fashion is a popular style or practice, especially in clothing,
           footwear, accessories, makeup, body, or furniture.
         </p>
-        <button className="bg-[#000000] text-white hover:text-[#000000] hover:bg-[#42FF1F] w-[150px] h-[40px] mt-10 font-bold">SHOP NOW</button>
+        <button className="bg-[#000000] text-white hover:text-[#000000] hover:bg-[#42FF1F] w-[150px] h-[40px] my-10 font-bold">SHOP NOW</button>
       </div>
       <div className="relative">
         <div className="carousel w-full ">

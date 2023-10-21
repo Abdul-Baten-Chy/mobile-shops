@@ -2,12 +2,13 @@ import Marquee from "react-fast-marquee";
 import Brands from "./Brands";
 import Header from "./Header";
 import NewArrival from "./NewArrival";
+import About from "./About";
 
 
 const Home = () => {
 
     return (
-        <div>
+        <div className="dark:bg-black">
             <Header></Header>
             <div className="flex gap-7 mt-14 justify-center">
             <NewArrival></NewArrival>
@@ -21,7 +22,7 @@ const Home = () => {
                 </div>
             </Marquee>
             <Brands></Brands>
-            
+            <About></About>
         </div>
     );
 };

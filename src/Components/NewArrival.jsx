@@ -2,7 +2,7 @@ const NewArrival = () => {
   return (
     <div>
       <h1 className="text-4xl mb-10 font-bold">New Arrival</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <div className="card  w-[263px] h-[300px] bg-base-100 shadow-xl flex flex-col justify-between ">
           <figure>
             <img

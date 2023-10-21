@@ -1,13 +1,26 @@
 
-
+import { useLoaderData } from "react-router-dom";
+import SingleProduct from "./SingleProduct";
 
 const ProductPage = () => {
-    
-    return (
+
+  const data = useLoaderData();
+  console.log(data);
+
+
+
+  return (
+    <div>
         <div>
-            <h3>me is product page</h3>
+
         </div>
-    );
+        <div className="grid lg:grid-cols-2 gap-5">
+        {
+            data.map(item=><SingleProduct key={item._id} item={item}></SingleProduct>)
+        }
+    </div>
+    </div>
+  );
 };
 
 export default ProductPage;

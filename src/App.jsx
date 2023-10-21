@@ -7,7 +7,7 @@ function App() {
 
   return (
    <div>
-     <div className="max-w-[1300px] mx-auto px-16">
+     <div className="max-w-[1300px] mx-auto px-4 md:px-16">
      <Nav></Nav>
      <Outlet></Outlet>
     </div>
