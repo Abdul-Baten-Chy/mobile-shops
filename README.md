@@ -8,8 +8,11 @@ About Project:
 
 >> Clicking on details page user will be shown the details product .
 
-Live link: 
+Live link: https://clientside-10.web.app/
 
 clientside git link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-Abdul-Baten-Chy
 
 server side git link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-Abdul-Baten-Chy
+
+live preview link of backend on vercel: https://backend-qwywwjwvf-abdu-baten-chys-projects.vercel.app/
+
