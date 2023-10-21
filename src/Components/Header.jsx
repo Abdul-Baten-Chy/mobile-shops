@@ -14,25 +14,25 @@ const Header = () => {
         <div className="carousel w-full ">
           <div id="item1" className="carousel-item w-full h-[500px] relative">
             <img
-              src="https://i.ibb.co/g6vLryz/p-6.jpg"
+              src="https://i.ibb.co/tLyKF7m/HM7-Feature4.webp"
               className="w-full object-cover"
             />
           </div>
           <div id="item2" className="carousel-item w-full h-[500px]">
             <img
-              src="https://i.ibb.co/JyCBng7/p-5.jpg"
+              src="https://i.ibb.co/cLHKfMC/HM7-Feature1.webp"
               className="w-full object-cover"
             />
           </div>
           <div id="item3" className="carousel-item w-full h-[500px]">
             <img
-              src="https://i.ibb.co/80XZKgn/image-3.jpg"
+              src="https://i.ibb.co/hc8ztjG/primo-r10-feature-7.webp"
               className="w-full object-cover"
             />
           </div>
           <div id="item4" className="carousel-item w-full h-[500px]">
             <img
-              src="https://i.ibb.co/SJWzjmz/h3.png"
+              src="https://i.ibb.co/RHmQ6b6/feature-phone.jpg"
               className="w-full object-cover"
             />
           </div>
